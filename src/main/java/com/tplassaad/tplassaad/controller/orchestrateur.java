@@ -4,7 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class orchestrateur {
@@ -20,7 +20,7 @@ public class orchestrateur {
 //	}
 	
 	@PostMapping(path="/Bonjour")
-	public String ironie(@RequestBody String name, Model model) {
+	public String ironie(@RequestParam String name, Model model) {
 		model.addAttribute("name", name);
 		System.out.println("name =======" + name);
 		return "returnedPage";
